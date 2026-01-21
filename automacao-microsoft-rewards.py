@@ -25,11 +25,11 @@ def pesquisar():
             print(f'{atual} já foi... trocando...')
             sleep(2)
             pesquisado.append(atual)
-            if atual in pesquisado:
+            while atual in pesquisado:
                 print(f'Trocando posição ocupada por {atual}...')
                 sleep(2)
                 atual = buscas[randint(0, len(buscas)-1)]
-        g = g - 1
+            g = g - 1
         if atual != anterior and atual not in pesquisado:
             print(buscas[randint(0, len(buscas)-1)])
             #escrever(buscas[randint(0, len(buscas)-1)], 0.01)
