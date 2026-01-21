@@ -1,41 +1,42 @@
 from time import sleep
 from random import randint
-from funcoes import mouseClique, apertarBotao, atalhoTeclado, escrever, moverPara
+from reautogui import mouseClique, apertarBotao, atalhoTeclado, escrever, moverPara, tamanhoTela
 
 def abrirEdge():
     print("Abrindo o Edge...")
     apertarBotao('win')
-    escrever('Edge', 0.5)
+    sleep(3)
+    escrever('Edge')
+    sleep(2)
     apertarBotao('enter')
-
+    
 def pesquisar():
     print("Iniciando pesquisas...")
-    c = g = 0
-    while c >= 0 and c <= len(buscas)-1:
-        #moverPara(257, 17)
-        #sleep(5)
-        #mouseClique()
-        #sleep(2)
-        #apertarBotao('delete')
+    c = 0
+    pesquisado = []
+    while c >= 0 and c <= len(buscas)-1: 
+        moverPara(257, 17)
+        sleep(5)
+        mouseClique()
+        sleep(5)
+        apertarBotao('delete')
         atual = buscas[randint(0, len(buscas)-1)]
-        anterior = buscas[c-1]
-        pesquisado = []
-        temp = ""
-        while g > 0 and atual == anterior:
-            print(f'{atual} já foi... trocando...')
-            sleep(2)
+        while atual not in pesquisado and len(pesquisado) >= 0:
+            print(f'Adicionando "{buscas[randint(0, len(buscas)-1)]}" à lista de pesquisados...', flush=True)
             pesquisado.append(atual)
-            while atual in pesquisado:
-                print(f'Trocando posição ocupada por {atual}...')
-                sleep(2)
-                atual = buscas[randint(0, len(buscas)-1)]
-            g = g - 1
-        if atual != anterior and atual not in pesquisado:
-            print(buscas[randint(0, len(buscas)-1)])
-            #escrever(buscas[randint(0, len(buscas)-1)], 0.01)
-        #apertarBotao('enter')
-        sleep(2)
+            print(pesquisado[len(pesquisado)-1], flush=True)
+            escrever(pesquisado[len(pesquisado)-1])
+            print(pesquisado, flush=True)
+            g = len(pesquisado)-1
+            while g > 0 and buscas[g] in pesquisado:
+                print(f'A pesquisa "{atual}" já foi feita. Fazendo uma nova...', flush=True)
+                atual = buscas[randint(0, len(buscas))]
+                escrever(atual)
+                g = g - 1
+        apertarBotao('enter')
+        sleep(5)
         c = c + 1
+    print(pesquisado, flush=True)
 
 def fecharEdge():
     sleep(2)
@@ -66,7 +67,7 @@ buscas = ["qual foi a primeira palavra registrada da historia",
     "minha namorada me pegou chorando no banho",
     "elementos literarios e para que servem",
     "para que escola se existe o google",
-    "ideias de achadinhos que não podem faltar na sua casa",
+    "ideias de achadinhos que nao podem faltar na sua casa",
     "qual e o melhor bing ou google",
     "centro de sao paulo",
     "professor de muay thai em Sao Paulo",
@@ -86,6 +87,8 @@ buscas = ["qual foi a primeira palavra registrada da historia",
     "github nao sincronizando com meu vs code"
 ]
 
-#abrirEdge()
+print("Automação ajustada para", end=" ")
+tamanhoTela()
+abrirEdge()
 pesquisar()
-#fecharEdge()
+fecharEdge()
