@@ -88,7 +88,24 @@ buscas = ["qual foi a primeira palavra registrada da historia",
     "como conseguir empregos usando Linkedin",
     "qual e o metodo de ensino usado nas escolas e porque e tao ruim",
     "github nao sincronizando com meu vs code",
-    "porque a aparencia do meu vs code fica bugada o que eu preciso instalar para resolver"
+    "porque a aparencia do meu vs code fica bugada o que eu preciso instalar para resolver",
+    "V de Vinganca filme",
+    "Marvel lancamento para esse ano",
+    "Jogos da Sony que sairam entre esse ano e o ano passado",
+    "Quantos Xbox a Microsoft vendeu esse ano",
+    "O que o ubersuggest faz",
+    "answerthepublic o que e o que faz",
+    "ferramentas de marketing com ia",
+    "porque os filmes antigos sao melhores que os atuais",
+    "porque a nostalgia hipnotiza o ser humano",
+    "onde esta al pacino hoje",
+    "atores da era de ouro dos filmes de acao",
+    "o que acontece quando voce treina todos os dias",
+    "quantos anos voce tinha quando descobriu isso",
+    "site:instagram.com python",
+    "site:linkedin.com vagas de desenvolvedor python",
+    "como atrair um gato filhote ate voce",
+    "como acalmar gato ultra hiperativo"
 ]
 
 abrirEdge()
