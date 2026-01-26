@@ -22,71 +22,13 @@ def pesquisadorAutonomo():
         apertarBotao('enter')
 
     def pesquisar():
+        global file
         print("Iniciando pesquisas...")
         c = 0
         pesquisado = []
-        buscas = ["qual foi a primeira palavra registrada da historia",
-        "crash bandicoot",
-        "rio claro sp hoje",
-        "michael jackson",
-        "gamepass hoje preco",
-        "o que aprendemos no curso de psicologia",
-        "clima para essa semana",
-        "aura farming desenvolvimento pessoal",
-        "porque e tao importante aprender a administrar uma empresa",
-        "porque eu nao consigo ser amigo da minha ex-namorada",
-        "gears of war lancamento",
-        "noticias atuais sobre o brasil",
-        "literatura para que serve e como a usamos sem perceber",
-        "app agendamento online gratuito",
-        "ideias de achadinhos na minha cidade",
-        "o que raios e farmar aura",
-        "aura porque os jovens gostam tanto disso",
-        "jogos de videogame 2026",
-        "porque nao ser amigo da ex",
-        "internet fibra otica regiao de rio claro sp",
-        "porque aprender a administrar uma empresa",
-        "minha namorada me pegou chorando no banho",
-        "elementos literarios e para que servem",
-        "para que escola se existe o google",
-        "ideias de achadinhos que nao podem faltar na sua casa",
-        "qual e o melhor bing ou google",
-        "centro de sao paulo",
-        "professor de muay thai em Sao Paulo",
-        "copywriting para iniciantes",
-        "marketing digital para YouTube",
-        "app agendamento identidade",
-        "origem da internet",
-        "porque aprender defesa pessoal",
-        "idade de cristiano ronaldo",
-        "aprender a administrar uma empresa",
-        "jogos gratis de xbox",
-        "app agendamento farmacia alto custo",
-        "salario de advogado",
-        "e se o messi fosse o melhor jogador de futebol do mundo",
-        "como conseguir empregos usando Linkedin",
-        "qual e o metodo de ensino usado nas escolas e porque e tao ruim",
-        "github nao sincronizando com meu vs code",
-        "porque a aparencia do meu vs code fica bugada o que eu preciso instalar para resolver",
-        "V de Vinganca filme",
-        "Marvel lancamento para esse ano",
-        "Jogos da Sony que sairam entre esse ano e o ano passado",
-        "Quantos Xbox a Microsoft vendeu esse ano",
-        "O que o ubersuggest faz",
-        "answerthepublic o que e o que faz",
-        "ferramentas de marketing com ia",
-        "porque os filmes antigos sao melhores que os atuais",
-        "porque a nostalgia hipnotiza o ser humano",
-        "onde esta al pacino hoje",
-        "atores da era de ouro dos filmes de acao",
-        "o que acontece quando voce treina todos os dias",
-        "quantos anos voce tinha quando descobriu isso",
-        "site:instagram.com python",
-        "site:linkedin.com vagas de desenvolvedor python",
-        "como atrair um gato filhote ate voce",
-        "como acalmar gato ultra hiperativo"
-        ]
-        while c >= 0 and c <= len(buscas)-1:
+        with open(file, 'r', encoding='utf-8') as arquivo:
+            buscas = [linha.strip() for linha in arquivo.readlines()]
+        while c >= 0 and c <= 26:
             moverPara(257, 17)
             sleep(randint(2, 5))
             mouseClique()
@@ -138,4 +80,6 @@ def pesquisadorAutonomo():
     apagarHistorico()
     fecharEdge()
 
+file = str(input("Informe o caminho do arquivo de pesquisas: ")).strip()
+print(file)
 pesquisadorAutonomo()
