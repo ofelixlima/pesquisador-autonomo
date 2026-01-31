@@ -1,6 +1,6 @@
 from time import sleep
 from random import randint
-from reautogui import mouseClique, apertarBotao, atalhoTeclado, escrever, moverPara, posicaoMouse
+from reautogui import *
 def pesquisadorAutonomo():
     """
     Pesquise no Bing sem escrever nada, nem clicar em nenhuma janela.
