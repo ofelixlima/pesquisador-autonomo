@@ -15,9 +15,9 @@ def pesquisadorAutonomo():
     """
     def abrirEdge():
         print("Abrindo o Edge...")
-        atalhoTeclado('win', 'r')
+        atalhoTeclado('super')
         sleep(randint(2, 5))
-        escrever('msedge.exe')
+        escrever('edge')
         sleep(randint(2, 5))
         apertarBotao('enter')
 
@@ -84,6 +84,5 @@ def pesquisadorAutonomo():
     pesquisar()
     apagarHistorico()
     fecharEdge()
-
 
 pesquisadorAutonomo()
